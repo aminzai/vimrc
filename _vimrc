@@ -107,9 +107,9 @@ set shiftwidth=4
 set nobackup
 
 " Set Folding 
-set foldenable
-set foldmethod=indent
-set foldcolumn=3
+"set foldenable
+"set foldmethod=indent
+"set foldcolumn=3
 
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
