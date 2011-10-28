@@ -107,9 +107,9 @@ set shiftwidth=4
 set nobackup
 
 " Set Folding 
-set foldenable
-set foldmethod=indent
-set foldcolumn=3
+"set foldenable
+"set foldmethod=indent
+"set foldcolumn=3
 
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
@@ -162,7 +162,7 @@ nmap <leader>q :q<CR>
 " Open file by Explore
 nmap <m-o> :Explore<CR>
 
-" Open file by Expore
+" Open file by EnerdTreexpore
 nmap <C-m-o> :vsplit<CR>:Explore<CR>
 
 " Winalt Window
@@ -208,3 +208,82 @@ imap      <F2>    <c-r>=strftime("%c")<CR>
 " Module Seting
 "========================================== 
 
+
+"""""""""""
+"Vundle (VIM model tool)
+"""""""""""
+
+filetype off                   " required!
+
+set rtp+=/Volumes/Data/Aminzai/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+filetype plugin indent on     " required! 
+
+
+""" Start snipMate 
+Bundle "git://github.com/MarcWeber/vim-addon-mw-utils.git"
+Bundle "git://github.com/tomtom/tlib_vim.git"
+Bundle "git://github.com/honza/snipmate-snippets.git"
+Bundle "git://github.com/garbas/vim-snipmate.git"
+""" End snipMate 
+
+""" Start NERDTree
+Bundle "git://github.com/scrooloose/nerdtree.git"
+nmap <leader>e :<C-u>NERDTree<CR>
+""" End NERDTree
+
+""" Start TagList
+Bundle 'taglist.vim'
+nmap <leader>t :<C-u>Tlist<CR>
+""" End TagList
+
+""" Start Omni Complete
+set ofu=syntaxcomplete#Complete
+
+"" OmniCppComplete
+Bundle 'OmniCppComplete'
+
+"" pythoncomplete
+Bundle 'pythoncomplete'
+""" End Omni Complete
+
+""" Start Syntax
+Bundle 'php.vim'
+Bundle 'jQuery'
+Bundle 'css_color.vim'
+Bundle 'cpp.vim'
+Bundle 'django.vim'
+Bundle 'git://github.com/plasticboy/vim-markdown.git'
+Bundle 'rest.vim'
+"set syntax=rest
+
+""" End Syntax
+
+
+" Sample Bundles here:
+"
+"" original repos on github
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"" vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+"Bundle 'rails.vim'
+"" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+" ...
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
