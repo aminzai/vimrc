@@ -162,7 +162,7 @@ nmap <leader>q :q<CR>
 " Open file by Explore
 nmap <m-o> :Explore<CR>
 
-" Open file by Expore
+" Open file by EnerdTreexpore
 nmap <C-m-o> :vsplit<CR>:Explore<CR>
 
 " Winalt Window
@@ -223,6 +223,47 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 filetype plugin indent on     " required! 
+
+
+""" Start snipMate 
+Bundle "git://github.com/MarcWeber/vim-addon-mw-utils.git"
+Bundle "git://github.com/tomtom/tlib_vim.git"
+Bundle "git://github.com/honza/snipmate-snippets.git"
+Bundle "git://github.com/garbas/vim-snipmate.git"
+""" End snipMate 
+
+""" Start NERDTree
+Bundle "git://github.com/scrooloose/nerdtree.git"
+nmap <leader>e :<C-u>NERDTree<CR>
+""" End NERDTree
+
+""" Start TagList
+Bundle 'taglist.vim'
+nmap <leader>t :<C-u>Tlist<CR>
+""" End TagList
+
+""" Start Omni Complete
+set ofu=syntaxcomplete#Complete
+
+"" OmniCppComplete
+Bundle 'OmniCppComplete'
+
+"" pythoncomplete
+Bundle 'pythoncomplete'
+""" End Omni Complete
+
+""" Start Syntax
+Bundle 'php.vim'
+Bundle 'jQuery'
+Bundle 'css_color.vim'
+Bundle 'cpp.vim'
+Bundle 'django.vim'
+Bundle 'git://github.com/plasticboy/vim-markdown.git'
+Bundle 'rest.vim'
+"set syntax=rest
+
+""" End Syntax
+
 
 " Sample Bundles here:
 "
