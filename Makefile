@@ -28,6 +28,9 @@ install:
 	@echo '--Done!--'
 	@echo ''
 
+update:
+	vim -c InitENV
+
 clean_backup_file:
 	@echo "--Starting cleaning vim's backup file...--"
 	rm -rf ${HOME}/.vim_bak*
