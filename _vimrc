@@ -225,24 +225,24 @@ Bundle 'gmarik/vundle'
 filetype plugin indent on     " required! 
 
 
-""" Start snipMate 
-Bundle "git://github.com/MarcWeber/vim-addon-mw-utils.git"
-Bundle "git://github.com/tomtom/tlib_vim.git"
-Bundle "git://github.com/honza/snipmate-snippets.git"
-Bundle "git://github.com/garbas/vim-snipmate.git"
+""" snipMate 
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
 """ End snipMate 
 
-""" Start NERDTree
-Bundle "git://github.com/scrooloose/nerdtree.git"
+""" NERDTree
+Bundle "scrooloose/nerdtree"
 nmap <leader>e :<C-u>NERDTree<CR>
 """ End NERDTree
 
-""" Start TagList
+""" TagList
 Bundle 'taglist.vim'
 nmap <leader>t :<C-u>Tlist<CR>
 """ End TagList
 
-""" Start Omni Complete
+""" Omni Complete
 set ofu=syntaxcomplete#Complete
 
 "" OmniCppComplete
@@ -252,13 +252,22 @@ Bundle 'OmniCppComplete'
 Bundle 'pythoncomplete'
 """ End Omni Complete
 
+""" VST :Vim reStructured Text 
+Bundle 'VST'
+""" End VST
+
+""" c.vim
+" Bundle 'vim-scripts/c.vim'
+""" End c.vim
+
 """ Start Syntax
+Bundle 'vim-scripts/Python-Syntax'
 Bundle 'php.vim'
 Bundle 'jQuery'
 Bundle 'css_color.vim'
 Bundle 'cpp.vim'
 Bundle 'django.vim'
-Bundle 'git://github.com/plasticboy/vim-markdown.git'
+Bundle 'plasticboy/vim-markdown'
 Bundle 'rest.vim'
 "set syntax=rest
 
@@ -287,3 +296,15 @@ Bundle 'rest.vim'
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+"
+"
+"
+"""" Init Env""""
+
+command InitENV call InitBundleEnv()
+
+fun! InitBundleEnv()
+   BundleInstall
+   quit
+   quit
+endf
