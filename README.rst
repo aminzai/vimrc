@@ -4,6 +4,17 @@ It's my vim config setting
 
 :Author:
     Kang-min Wang (Aminzai)
+:Build Date:
+    2011/11/28
+:Version:
+    2.0
+
+Require
+========================================
+1. Git
+2. Network
+#. make
+#. vim
 
 Installation
 ========================================
