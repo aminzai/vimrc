@@ -30,12 +30,9 @@ Update
 1. use vim (comaand mode), run command BundleInstall
 2. use make, $make update 
 
-
-
 Backup
 ========================================
-This version can auto backup orginal config by date. 
-
+This version can auto backup orginal config before install
 Backup directory: ${HOME}/.vim_back-${data}
 
 Clean backup 
