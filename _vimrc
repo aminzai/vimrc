@@ -287,3 +287,15 @@ Bundle 'rest.vim'
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+"
+"
+"
+"""" Init Env""""
+
+command InitENV call InitBundleEnv()
+
+fun! InitBundleEnv()
+   BundleInstall
+   quit
+   quit
+endf
