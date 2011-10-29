@@ -252,8 +252,12 @@ Bundle 'OmniCppComplete'
 Bundle 'pythoncomplete'
 """ End Omni Complete
 
+""" VST :Vim reStructured Text 
+Bundle 'VST'
+""" End VST
+
 """ c.vim
-Bundle 'vim-scripts/c.vim'
+" Bundle 'vim-scripts/c.vim'
 """ End c.vim
 
 """ Start Syntax
