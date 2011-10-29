@@ -32,7 +32,8 @@ Update
 
 Backup
 ========================================
-This version can auto backup orginal config before install
+This version can auto backup orginal config before install.
+
 Backup directory: ${HOME}/.vim_back-${data}
 
 Clean backup 
