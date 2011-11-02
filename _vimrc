@@ -215,7 +215,7 @@ imap      <F2>    <c-r>=strftime("%c")<CR>
 
 filetype off                   " required!
 
-set rtp+=/Volumes/Data/Aminzai/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
