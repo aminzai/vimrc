@@ -243,16 +243,55 @@ nmap <leader>e :<C-u>NERDTree<CR>
 """ End NERDTree
 
 """ TagList
-Bundle 'taglist.vim'
-nmap <leader>t :<C-u>Tlist<CR>
+""Bundle 'taglist.vim'
+""nmap <leader>t :<C-u>Tlist<CR>
 """ End TagList
+
+""" Tagbar
+Bundle "majutsushi/tagbar"
+nmap <leader>t :<C-u>TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_sort = 0
+
+if has('win32')
+    let g:tagbar_ctags_bin='C:\ctags.exe'
+endif
 
 """ Omni Complete
 set ofu=syntaxcomplete#Complete
 
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
 "" OmniCppComplete
 Bundle 'OmniCppComplete'
 
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+set tags+=~/vimfiles/tags/tags
+set tags+=~/vimfiles/tags/c++.tags
+set tags+=~/vimfiles/tags/stl-3.3.tags
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+let OmniCpp_MayCompleteDot = 1 " autocomplete with .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
+let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
+let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
 "" pythoncomplete
 Bundle 'pythoncomplete'
 """ End Omni Complete
