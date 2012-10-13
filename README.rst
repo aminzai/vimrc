@@ -21,9 +21,11 @@ Require
 
 Installation
 ========================================
-Only one step! just do make!
 
-$make
+- windows
+  - WindowsInstall.bat
+- Linux & MacOSX
+  - make install
 
 Update
 ========================================
