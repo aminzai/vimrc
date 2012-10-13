@@ -37,15 +37,18 @@ mkdir "%VIMFILES%"\autoload"
 
 echo Copy base init file to %VIMFILES% 
 copy _vimrc %VIMFILES%
+copy ctags.exe C:\
 xcopy _vim\* %VIMFILES% /E /Y
 
-echo vimrc shortcut...
+echo build vimrc shortcut...
 mklink "%VIMRC%" "vimfiles\_vimrc"
 
 echo Initial base plugin...
 call :InstallCurl
 git clone http://github.com/gmarik/vundle.git %VIMFILES%/bundle/vundle
 ::vim -c InitENV
+echo -------Note-------
+echo Must initial last env setting at vim :InitEnv
 echo -------DONE-------
 pause
 goto exit
