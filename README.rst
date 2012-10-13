@@ -16,8 +16,9 @@ Require
 ========================================
 1. Git
 2. Network
-#. make
-#. vim
+#. make (Unix Link Only)
+#. Vim
+#. Curl
 
 Installation
 ========================================
@@ -31,12 +32,15 @@ Update
 ========================================
 1. use vim (comaand mode), run command BundleInstall
 2. use make, $make update 
+*Just support Unix like system
 
 Backup
 ========================================
 This version can auto backup orginal config before install.
 
 Backup directory: ${HOME}/.vim_back-${data}
+
+*Just support Unix like system
 
 Clean backup 
 ----------------------------------------
