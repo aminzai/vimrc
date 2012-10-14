@@ -20,6 +20,14 @@ set nocompatible
 "  "set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
 "endif
 
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
+
 " Show Tabline
 set showtabline=2
 
@@ -34,8 +42,8 @@ endif
 " Set Color Sheme
 "colorscheme wombat256
 "color wombat256
-colorscheme desert256
-color desert256
+colorscheme desertEx
+color desertEx
 
 "" Wild Mode
 "set wildmode=full,list
@@ -303,6 +311,36 @@ Bundle 'VST'
 """ c.vim
 " Bundle 'vim-scripts/c.vim'
 """ End c.vim
+
+""" vim-surround
+Bundle 'tpope/vim-surround'
+""" end vim-surround
+
+""" numbers.vim
+Bundle "myusuf3/numbers.vim"
+nnoremap <F3> :NumbersToggle<CR>
+""" end numbers.vim
+
+""ctrlp.vim
+Bundle 'kien/ctrlp.vim.git'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+""let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+""end ctrlp.vim
+
+"" easymotion
+Bundle 'Lokaltog/vim-easymotion'
+""end easymotion
 
 """ Start Syntax
 Bundle 'vim-scripts/Python-Syntax'
