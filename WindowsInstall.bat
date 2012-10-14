@@ -1,4 +1,4 @@
-@echo off
+::@echo off
 
 :: BatchGotAdmin
 :-------------------------------------
@@ -25,27 +25,28 @@ if '%errorlevel%' NEQ '0' (
 :--------------------------------------
 
 
-set HOME="%UserProfile%"
-set VIMFILES="%UserProfile%\vimfiles"
-set VIMRC="%UserProfile%\_vimrc"
+set HOME=%UserProfile%
+set VIMFILES=%UserProfile%\vimfiles
+set VIMRC=%UserProfile%\_vimrc
 
 echo Build VIM env directory...
 mkdir "%VIMFILES%"
 
 echo Build Directory for autoload...
-mkdir "%VIMFILES%"\autoload"
+mkdir "%VIMFILES%\autoload"
 
 echo Copy base init file to %VIMFILES% 
-copy _vimrc %VIMFILES%
+copy _vimrc "%VIMFILES%"
 copy ctags.exe C:\
-xcopy _vim\* %VIMFILES% /E /Y
+xcopy _vim\* "%VIMFILES%" /E /Y
 
 echo build vimrc shortcut...
-mklink "%VIMRC%" "vimfiles\_vimrc"
+::mklink "%VIMRC%" "%VIMFILES%\_vimrc"
+copy _vimrc "%VIMFILES%"
 
 echo Initial base plugin...
 call :InstallCurl
-git clone http://github.com/gmarik/vundle.git %VIMFILES%/bundle/vundle
+git clone http://github.com/gmarik/vundle.git "%VIMFILES%/bundle/vundle"
 ::vim -c InitENV
 echo -------Note-------
 echo Must initial last env setting at vim :InitEnv
