@@ -223,6 +223,9 @@ imap      <F2>    <c-r>=strftime("%c")<CR>
 
 filetype off                   " required!
 
+"use git:// as bundle default protocal
+"let g:vundle_default_git_proto = 'git'
+
 if has('win32')
     set rtp+=%UserProfile%\vimfiles/bundle/vundle/
 else
