@@ -241,6 +241,10 @@ Bundle 'gmarik/vundle'
 filetype plugin indent on     " required! 
 
 
+""" vim-powerline
+Bundle 'Lokaltog/vim-powerline'
+""" vim-powerline end
+
 """ snipMate 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
