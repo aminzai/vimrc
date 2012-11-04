@@ -354,6 +354,7 @@ Bundle 'cpp.vim'
 Bundle 'django.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'rest.vim'
+Bundle 'flazz/vim-colorschemes'
 "set syntax=rest
 
 """ End Syntax
