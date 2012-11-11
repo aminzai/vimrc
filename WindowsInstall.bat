@@ -42,15 +42,12 @@ xcopy _vim\* "%VIMFILES%" /E /Y
 
 echo build vimrc shortcut...
 ::mklink "%VIMRC%" "%VIMFILES%\_vimrc"
-copy _vimrc "%VIMFILES%"
+"copy _vimrc "%VIMFILES%"
+copy _vimrc "%HOME%"
 
 echo Initial base plugin...
 call :InstallCurl
-git clone http://github.com/gmarik/vundle.git "%VIMFILES%/bundle/vundle"
-::vim -c InitENV
-echo -------Note-------
-echo Must initial last env setting at vim :InitEnv
-echo -------DONE-------
+ git clone git://github.com/Shougo/neobundle.vim "%VIMFILES%/bundle/neobundle.vim"
 pause
 goto exit
 

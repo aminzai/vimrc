@@ -204,6 +204,11 @@ cnoremap <c-d> <del>
 
 " Add time
 imap      <F2>    <c-r>=strftime("%c")<CR>
+if has('win32')
+    nmap      <leader>r   :source ~/_vimrc<CR>
+else
+    nmap      <leader>r   :source ~/.vimrc<CR>
+endif
 
 
 
@@ -227,33 +232,37 @@ filetype off                   " required!
 "let g:vundle_default_git_proto = 'git'
 
 if has('win32')
-    set rtp+=%UserProfile%\vimfiles/bundle/vundle/
+    "set rtp+=%UserProfile%\vimfiles/bundle/vundle/
+    set rtp+=%UserProfile%\vimfiles/bundle/neobundle.vim/
 else
-    set rtp+=~/.vim/bundle/vundle/
+    set rtp+=~/.vim/bundle/neobundle.vim/
 endif
 
-call vundle#rc()
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-filetype plugin indent on     " required! 
+" Let NeoBundle manage NeoBundle
+"NeoBundle 'Shougo/neobundle.vim'
 
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimproc'
+
+" My Bundles here:
 
 """ vim-powerline
-Bundle 'Lokaltog/vim-powerline'
+NeoBundle 'Lokaltog/vim-powerline'
 """ vim-powerline end
 
 """ snipMate 
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
-Bundle "garbas/vim-snipmate"
+NeoBundle "MarcWeber/vim-addon-mw-utils"
+NeoBundle "tomtom/tlib_vim"
+NeoBundle "honza/snipmate-snippets"
+NeoBundle "garbas/vim-snipmate"
 """ End snipMate 
 
 """ NERDTree
-Bundle "scrooloose/nerdtree"
+NeoBundle "scrooloose/nerdtree"
 nmap <leader>e :<C-u>NERDTree<CR>
 """ End NERDTree
 
@@ -263,7 +272,7 @@ nmap <leader>e :<C-u>NERDTree<CR>
 """ End TagList
 
 """ Tagbar
-Bundle "majutsushi/tagbar"
+NeoBundle "majutsushi/tagbar"
 nmap <leader>t :<C-u>TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0
@@ -293,7 +302,7 @@ let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 "" OmniCppComplete
-Bundle 'OmniCppComplete'
+NeoBundle 'OmniCppComplete'
 
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags+=~/vimfiles/tags/tags
@@ -308,11 +317,11 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
 let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
 let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
 "" pythoncomplete
-Bundle 'pythoncomplete'
+NeoBundle 'pythoncomplete'
 """ End Omni Complete
 
 """ VST :Vim reStructured Text 
-Bundle 'VST'
+NeoBundle 'VST'
 """ End VST
 
 """ c.vim
@@ -320,16 +329,16 @@ Bundle 'VST'
 """ End c.vim
 
 """ vim-surround
-Bundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-surround'
 """ end vim-surround
 
 """ numbers.vim
-Bundle "myusuf3/numbers.vim"
+NeoBundle "myusuf3/numbers.vim"
 nnoremap <F3> :NumbersToggle<CR>
 """ end numbers.vim
 
 ""ctrlp.vim
-Bundle 'kien/ctrlp.vim.git'
+NeoBundle 'kien/ctrlp.vim.git'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -346,54 +355,50 @@ let g:ctrlp_custom_ignore = {
 ""end ctrlp.vim
 
 "" easymotion
-Bundle 'Lokaltog/vim-easymotion'
+NeoBundle 'Lokaltog/vim-easymotion'
 ""end easymotion
 
 """ Start Syntax
-Bundle 'vim-scripts/Python-Syntax'
-Bundle 'php.vim'
-Bundle 'jQuery'
-Bundle 'css_color.vim'
-Bundle 'cpp.vim'
-Bundle 'django.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'rest.vim'
+NeoBundle 'vim-scripts/Python-Syntax'
+NeoBundle 'php.vim'
+NeoBundle 'jQuery'
+NeoBundle 'css_color.vim'
+NeoBundle 'cpp.vim'
+NeoBundle 'django.vim'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'rest.vim'
 "set syntax=rest
 
 """ End Syntax
-
-
-" Sample Bundles here:
 "
-"" original repos on github
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-"Bundle 'rails.vim'
-"" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
+" Note: You don't set neobundle setting in .gvimrc!
+" Original repos on github
+"NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'Lokaltog/vim-easymotion'
+"NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" vim-scripts repos
+"NeoBundle 'L9'
+"NeoBundle 'FuzzyFinder'
+"NeoBundle 'rails.vim'
+" Non github repos
+"NeoBundle 'git://git.wincent.com/command-t.git'
+" Non git repos
+"NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
+"NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
+
 " ...
+
+filetype plugin indent on     " Required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-"
-"
-"
-"""" Init Env""""
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
-command InitENV call InitBundleEnv()
-
-fun! InitBundleEnv()
-   BundleInstall
-   quit
-   quit
-endf
+" Installation check.
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+        \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+  "finish
+endif
