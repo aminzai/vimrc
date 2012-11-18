@@ -328,6 +328,10 @@ NeoBundle 'VST'
 " Bundle 'vim-scripts/c.vim'
 """ End c.vim
 
+""" vim-fugitive (Git Plugin)
+NeoBundle 'tpope/vim-fugitive'
+"""
+
 """ vim-surround
 NeoBundle 'tpope/vim-surround'
 """ end vim-surround
