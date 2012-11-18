@@ -23,13 +23,13 @@ install:
 	cat _vimrc > ${FILE_VIMRC}
 	cat _gvimrc > ${FILE_GVIMRC}
 	cp -a _vim ${DIR_VIM} 
-	git clone http://github.com/gmarik/vundle.git ${DIR_VIM}/bundle/vundle
-	vim -c InitENV
+	git clone git://github.com/Shougo/neobundle.vim ${DIR_VIM}/bundle/neobundle.vim
+	#vim -c InitENV
 	@echo '--Done!--'
 	@echo ''
 
 update:
-	vim -c InitENV
+	#vim -c InitENV
 
 clean_backup_file:
 	@echo "--Starting cleaning vim's backup file...--"
