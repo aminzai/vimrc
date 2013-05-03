@@ -192,6 +192,16 @@ nmap <s-tab> v<
 xnoremap <tab> >gv
 "vmap <tab> >gv
 xnoremap <s-tab> <gv
+map <A-1> :tabn1 <CR>
+map <A-2> :tabn2 <CR>
+map <A-3> :tabn3 <CR>
+map <A-4> :tabn4 <CR>
+map <A-5> :tabn5 <CR>
+map <A-6> :tabn6 <CR>
+map <A-7> :tabn7 <CR>
+map <A-8> :tabn8 <CR>
+map <A-9> :tabn9 <CR>
+
 
 " Command Mode
 cmap <c-a> <home>
@@ -246,7 +256,15 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimproc'
+"NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      "\     'windows' : 'make -f make_mingw32.mak',
+      "\     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 
 " My Bundles here:
 
@@ -255,10 +273,10 @@ NeoBundle 'Lokaltog/vim-powerline'
 """ vim-powerline end
 
 """ snipMate 
-NeoBundle "MarcWeber/vim-addon-mw-utils"
-NeoBundle "tomtom/tlib_vim"
-NeoBundle "honza/snipmate-snippets"
-NeoBundle "garbas/vim-snipmate"
+"NeoBundle "MarcWeber/vim-addon-mw-utils"
+"NeoBundle "tomtom/tlib_vim"
+"NeoBundle "honza/snipmate-snippets"
+"NeoBundle "garbas/vim-snipmate"
 """ End snipMate 
 
 """ NERDTree
@@ -340,6 +358,11 @@ NeoBundle 'tpope/vim-surround'
 "NeoBundle "myusuf3/numbers.vim"
 "nnoremap <F3> :NumbersToggle<CR>
 """ end numbers.vim
+
+"""SrcExpl
+NeoBundle "wesleyche/SrcExpl"
+map <leader>s  :<C-u>SrcExplToggle<CR>
+"""end SrcExpl
 
 ""ctrlp.vim
 NeoBundle 'kien/ctrlp.vim.git'
