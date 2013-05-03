@@ -192,6 +192,16 @@ nmap <s-tab> v<
 xnoremap <tab> >gv
 "vmap <tab> >gv
 xnoremap <s-tab> <gv
+map <A-1> :tabn1 <CR>
+map <A-2> :tabn2 <CR>
+map <A-3> :tabn3 <CR>
+map <A-4> :tabn4 <CR>
+map <A-5> :tabn5 <CR>
+map <A-6> :tabn6 <CR>
+map <A-7> :tabn7 <CR>
+map <A-8> :tabn8 <CR>
+map <A-9> :tabn9 <CR>
+
 
 " Command Mode
 cmap <c-a> <home>
