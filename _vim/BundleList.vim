@@ -12,7 +12,10 @@ NeoBundle 'Shougo/vimproc'
 
 
 """ vim-powerline
-NeoBundle 'Lokaltog/vim-powerline'
+"NeoBundle 'Lokaltog/vim-powerline'
+
+""" vim-airline
+NeoBundle 'bling/vim-airline'
 
 """ snipMate 
 "NeoBundle "MarcWeber/vim-addon-mw-utils"
