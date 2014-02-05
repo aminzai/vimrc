@@ -1,6 +1,6 @@
 
 "vimproc
-NeoBundle 'Shougo/vimproc'
+" NeoBundle 'Shougo/vimproc'
 "NeoBundle 'Shougo/vimproc', {
 "      \ 'build' : {
 "      "\     'windows' : 'make -f make_mingw32.mak',
@@ -11,6 +11,7 @@ NeoBundle 'Shougo/vimproc'
 "      \ }
 
 
+
 """ vim-powerline
 "NeoBundle 'Lokaltog/vim-powerline'
 
@@ -18,10 +19,12 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'bling/vim-airline'
 
 """ snipMate 
-"NeoBundle "MarcWeber/vim-addon-mw-utils"
-"NeoBundle "tomtom/tlib_vim"
-"NeoBundle "honza/snipmate-snippets"
-"NeoBundle "garbas/vim-snipmate"
+NeoBundle "MarcWeber/vim-addon-mw-utils"
+NeoBundle "tomtom/tlib_vim"
+NeoBundle "garbas/vim-snipmate"
+"" Optional:
+NeoBundle "honza/vim-snippets"
+NeoBundle "jamescarr/snipmate-nodejs"
 """ End snipMate 
 
 """ NERDTree
@@ -105,8 +108,8 @@ NeoBundle 'VST'
 """ end numbers.vim
 
 """SrcExpl
-NeoBundle "wesleyche/SrcExpl"
-map <leader>s  :<C-u>SrcExplToggle<CR>
+" NeoBundle "wesleyche/SrcExpl"
+" map <leader>s  :<C-u>SrcExplToggle<CR>
 
 " // The switch of the Source Explorer 
 " nmap <F8> :SrcExplToggle<CR> 
@@ -126,23 +129,23 @@ map <leader>s  :<C-u>SrcExplToggle<CR>
 " " // In order to Avoid conflicts, the Source Explorer should know what  plugins 
 " " // are using buffers. And you need add their bufname into the list below 
 " " // according to the command ":buffers!" 
- let g:SrcExpl_pluginList = [ 
-             \ "__Tag_List__", 
-             \ "_NERD_tree_", 
-             \ "Source_Explorer" 
-             \ ] 
+" let g:SrcExpl_pluginList = [ 
+"             \ "__Tag_List__", 
+"             \ "_NERD_tree_", 
+"             \ "Source_Explorer" 
+"             \ ] 
 "
 " // Enable/Disable the local definition "searching, and note that this is not 
 " // guaranteed to work, the Source Explorer "doesn't check the syntax for now. 
 " // It only searches for a match with the keyword according to command 'gd' 
-let g:SrcExpl_searchLocalDef = 1 
+" let g:SrcExpl_searchLocalDef = 1 
 
 " // Do not let the Source Explorer update the "tags file when opening 
-let g:SrcExpl_isUpdateTags = 0 
+" let g:SrcExpl_isUpdateTags = 0 
 
 " // Use 'Exuberant Ctags' with '--sort=foldcase "-R .' or '-L cscope.files' to 
 " // create/update the tags file 
-let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
+" let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
 
 " // Set "<F12>" key for updating the tags file "artificially 
 "let g:SrcExpl_updateTagsKey = "<F12>" 
@@ -156,23 +159,23 @@ let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
 """end SrcExpl
 
 "Trinity
-NeoBundle "wesleyche/Trinity"
+" NeoBundle "wesleyche/Trinity"
 
 ""ctrlp.vim
-NeoBundle 'kien/ctrlp.vim.git'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+" NeoBundle 'kien/ctrlp.vim.git'
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_working_path_mode = 'ra'
+" 
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+" set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 ""let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"   \ 'file': '\v\.(exe|so|dll)$',
+"   \ 'link': 'some_bad_symbolic_links',
+"   \ }
 ""end ctrlp.vim
 
 "" easymotion
@@ -180,16 +183,18 @@ let g:ctrlp_custom_ignore = {
 ""end easymotion
 
 """ Start Syntax
-NeoBundle 'vim-scripts/Python-Syntax'
-NeoBundle 'php.vim'
-NeoBundle 'jQuery'
-NeoBundle 'css_color.vim'
-NeoBundle 'cpp.vim'
-NeoBundle 'django.vim'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'rest.vim'
-NeoBundle 'flazz/vim-colorschemes'
+" NeoBundle 'vim-scripts/Python-Syntax'
+NeoBundle "pangloss/vim-javascript"
+" NeoBundle 'php.vim'
+" NeoBundle 'jQuery'
+" NeoBundle 'css_color.vim'
+" NeoBundle 'cpp.vim'
+" NeoBundle 'django.vim'
+" NeoBundle 'plasticboy/vim-markdown'
+" NeoBundle 'rest.vim'
 "set syntax=rest
+"
+NeoBundle 'flazz/vim-colorschemes'
 
 """ End Syntax
 "
