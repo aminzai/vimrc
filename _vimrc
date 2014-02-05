@@ -103,7 +103,7 @@ set showcmd
 set showmode
 
 "Set no Wrap
-" set nowrap
+set nowrap
 
 "Set Soft tab stop
 set softtabstop=4
