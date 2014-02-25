@@ -254,7 +254,11 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundle 'Shougo/neobundle.vim'
 
-source ${HOME}/.vim/BundleList.vim
+if has('win32')
+    source ~\vimfiles\BundleList.vim
+else
+    source ${HOME}/.vim/BundleList.vim
+endif 
 
 
 filetype plugin indent on     " Required!
