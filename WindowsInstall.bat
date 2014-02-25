@@ -42,7 +42,7 @@ xcopy _vim\* "%VIMFILES%" /E /Y
 
 echo build vimrc shortcut...
 ::mklink "%VIMRC%" "%VIMFILES%\_vimrc"
-"copy _vimrc "%VIMFILES%"
+::copy _vimrc "%VIMFILES%"
 copy _vimrc "%HOME%"
 
 echo Initial base plugin...
