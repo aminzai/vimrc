@@ -47,6 +47,9 @@ if has('win32')
     let g:tagbar_ctags_bin='C:\ctags.exe'
 endif
 
+""" You Complete Me
+NeoBundle "Valloric/YouCompleteMe"
+
 """ Omni Complete
 "set ofu=syntaxcomplete#Complete
 
