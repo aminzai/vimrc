@@ -134,7 +134,7 @@ set cindent
 set ruler
 
 "Support mouse
-" set mouse=a
+set mouse=a
 
 " Hightlight in Search
 set hlsearch
