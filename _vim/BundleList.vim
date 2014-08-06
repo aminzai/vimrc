@@ -47,6 +47,8 @@ if has('win32')
     let g:tagbar_ctags_bin='C:\ctags.exe'
 endif
 
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
 """ You Complete Me
 NeoBundle "Valloric/YouCompleteMe"
 
@@ -102,7 +104,7 @@ let g:SrcExpl_pluginList = [
 " // Enable/Disable the local definition "searching, and note that this is not 
 " // guaranteed to work, the Source Explorer "doesn't check the syntax for now. 
 " // It only searches for a match with the keyword according to command 'gd' 
-" let g:SrcExpl_searchLocalDef = 1 
+let g:SrcExpl_searchLocalDef = 1
 
 " // Do not let the Source Explorer update the "tags file when opening 
  let g:SrcExpl_isUpdateTags = 0 
