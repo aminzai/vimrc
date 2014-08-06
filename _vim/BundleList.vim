@@ -190,3 +190,9 @@ NeoBundle 'flazz/vim-colorschemes'
 "NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
 "NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
+"NeoBundle 'Yggdroot/indentLine'
+"show indent guides
+"set list
+"set listchars=tab:\⁞\ 
+"set listchars=tab:\»\ 
+set listchars=eol:$,tab:\»\ ,trail:~,extends:>,precedes:<
