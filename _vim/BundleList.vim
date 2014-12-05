@@ -17,14 +17,20 @@ NeoBundle 'Shougo/vimproc', {
 
 """ vim-airline
 NeoBundle 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts=1
+
+NeoBundle "mhinz/vim-signify"
+
+NeoBundle "edkolev/promptline.vim"
 
 """ snipMate 
-NeoBundle "MarcWeber/vim-addon-mw-utils"
-NeoBundle "tomtom/tlib_vim"
-NeoBundle "garbas/vim-snipmate"
-"" Optional:
-NeoBundle "honza/vim-snippets"
-NeoBundle "jamescarr/snipmate-nodejs"
+" NeoBundle "MarcWeber/vim-addon-mw-utils"
+" NeoBundle "tomtom/tlib_vim"
+" NeoBundle "garbas/vim-snipmate"
+" "" Optional:
+" NeoBundle "honza/vim-snippets"
+" NeoBundle "jamescarr/snipmate-nodejs"
 """ End snipMate 
 
 """ NERDTree
@@ -47,10 +53,47 @@ if has('win32')
     let g:tagbar_ctags_bin='C:\ctags.exe'
 endif
 
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
 """ You Complete Me
 NeoBundle "Valloric/YouCompleteMe"
+
+""" Omni Complete
+"set ofu=syntaxcomplete#Complete
+
+" Enable omni completion.
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+"if !exists('g:neocomplcache_omni_patterns')
+"  let g:neocomplcache_omni_patterns = {}
+"endif
+"let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+""autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+"let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+"let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+"" OmniCppComplete
+"NeoBundle 'OmniCppComplete'
+
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+"set tags+=~/vimfiles/tags/tags
+"set tags+=~/vimfiles/tags/c++.tags
+"set tags+=~/vimfiles/tags/stl-3.3.tags
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+"let OmniCpp_MayCompleteDot = 1 " autocomplete with .
+"let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
+"let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
+"let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
+"let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
+""" pythoncomplete
+"NeoBundle 'pythoncomplete'
+""" End Omni Complete
 
 """ VST :Vim reStructured Text 
 NeoBundle 'VST'
@@ -90,28 +133,28 @@ let g:SrcExpl_refreshTime = 100
 let g:SrcExpl_jumpKey = "<ENTER>" 
 
 " // Set "Space" key for back from the definition context 
-let g:SrcExpl_gobackKey = "<SPACE>" 
+ let g:SrcExpl_gobackKey = "<SPACE>" 
 "
 " " // In order to Avoid conflicts, the Source Explorer should know what  plugins 
 " " // are using buffers. And you need add their bufname into the list below 
 " " // according to the command ":buffers!" 
 let g:SrcExpl_pluginList = [ 
+            \ "_NERD_tree_" ,
             \ "__Tag_List__", 
-            \ "_NERD_tree_", 
-            \ "Source_Explorer" 
             \ ] 
+            "\ "Source_Explorer" 
 
 " // Enable/Disable the local definition "searching, and note that this is not 
 " // guaranteed to work, the Source Explorer "doesn't check the syntax for now. 
 " // It only searches for a match with the keyword according to command 'gd' 
-let g:SrcExpl_searchLocalDef = 1
+let g:SrcExpl_searchLocalDef = 1 
 
 " // Do not let the Source Explorer update the "tags file when opening 
  let g:SrcExpl_isUpdateTags = 0 
 
 " // Use 'Exuberant Ctags' with '--sort=foldcase "-R .' or '-L cscope.files' to 
 " // create/update the tags file 
-let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
+ let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
 
 " // Set "<F12>" key for updating the tags file "artificially 
 let g:SrcExpl_updateTagsKey = "<F12>" 
