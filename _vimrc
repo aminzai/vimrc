@@ -42,8 +42,10 @@ endif
 " Set Color Sheme
 "colorscheme wombat256
 "color wombat256
-colorscheme desertEx
-color desertEx
+"colorscheme desertEx
+"color desertEx
+colorscheme Monokai
+color Monokai
 
 "" Wild Mode
 "set wildmode=full,list
@@ -60,7 +62,7 @@ set cursorline
 " Status Line
 set laststatus=2
 "set   statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",bom\":\"\")}]\ %-14.(%l,%c%v%)\ %p
-set statusline=File:\ %t\%r%h%w\ [%{&ff},%{&fileencoding},%Y]\ %m%=\ [AscII=\%03.3b]\ [Hex=\%02.2B]\ [Pos=%l,%v,%p%%]\ [LINE=%L]
+" set statusline=File:\ %t\%r%h%w\ [%{&ff},%{&fileencoding},%Y]\ %m%=\ [AscII=\%03.3b]\ [Hex=\%02.2B]\ [Pos=%l,%v,%p%%]\ [LINE=%L]
 
 " Do not redraw while running macros ( much faster )
 set lazyredraw
@@ -249,16 +251,19 @@ else
 endif
 
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 if has('win32')
     source ~\vimfiles\BundleList.vim
 else
     source ${HOME}/.vim/BundleList.vim
 endif 
+
+call neobundle#end()
+
 
 
 filetype plugin indent on     " Required!
@@ -269,9 +274,11 @@ filetype plugin indent on     " Required!
 " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 " Installation check.
-if neobundle#exists_not_installed_bundles()
-  echomsg 'Not installed bundles : ' .
-        \ string(neobundle#get_not_installed_bundle_names())
-  echomsg 'Please execute ":NeoBundleInstall" command.'
-  "finish
-endif
+"if neobundle#exists_not_installed_bundles()
+"  echomsg 'Not installed bundles : ' .
+"        \ string(neobundle#get_not_installed_bundle_names())
+"  echomsg 'Please execute ":NeoBundleInstall" command.'
+"  "finish
+"endif
+
+NeoBundleCheck
