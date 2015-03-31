@@ -48,8 +48,7 @@ install_files() {
 	ln -sf ${VIMRC_LOCAL} ${VIMRC}
 	ln -sf ${GVIMRC_LOCAL} ${GVIMRC}
 	cd ${VIM_FOLDER}
-	git submodule init
-	git submodule update
+	bash ./update.sh
 	echo -e "${LIGHT_BLUE}Done!${NC}"
 }
 	
