@@ -42,10 +42,10 @@ endif
 " Set Color Sheme
 "colorscheme wombat256
 "color wombat256
-"colorscheme desertEx
-"color desertEx
-colorscheme Monokai
-color Monokai
+colorscheme desertEx
+color desertEx
+"colorscheme Monokai
+"color Monokai
 
 "" Wild Mode
 "set wildmode=full,list
