@@ -1,16 +1,9 @@
 #!/bin/sh
-git pull origin master
-git submodule init
-git submodule update
 git submodule update --init --recursive
-git submodule foreach git submodule init
-git submodule foreach git submodule update
-#git submodule foreach git pull
-git submodule foreach git pull origin master
-
 
 #Compile YouCompleteMe
 CUR=${PWD}
 cd bundle/YouCompleteMe/
-./install.sh
+./install.sh --clang-completer
 cd ${CUR}
+ln -sf ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py ~/.ycm_extra_conf.py
