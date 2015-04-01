@@ -10,11 +10,6 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 
-
-
-""" vim-powerline
-"NeoBundle 'Lokaltog/vim-powerline'
-
 """ vim-airline
 NeoBundle 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
@@ -23,15 +18,6 @@ let g:airline_powerline_fonts=1
 NeoBundle "mhinz/vim-signify"
 
 NeoBundle "edkolev/promptline.vim"
-
-""" snipMate 
-" NeoBundle "MarcWeber/vim-addon-mw-utils"
-" NeoBundle "tomtom/tlib_vim"
-" NeoBundle "garbas/vim-snipmate"
-" "" Optional:
-" NeoBundle "honza/vim-snippets"
-" NeoBundle "jamescarr/snipmate-nodejs"
-""" End snipMate 
 
 """ NERDTree
 NeoBundle "scrooloose/nerdtree"
@@ -58,65 +44,11 @@ NeoBundle "Valloric/YouCompleteMe"
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 
-""" Omni Complete
-"set ofu=syntaxcomplete#Complete
-
-" Enable omni completion.
-"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-"if !exists('g:neocomplcache_omni_patterns')
-"  let g:neocomplcache_omni_patterns = {}
-"endif
-"let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-""autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-"let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-"let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-
-"" OmniCppComplete
-"NeoBundle 'OmniCppComplete'
-
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-"set tags+=~/vimfiles/tags/tags
-"set tags+=~/vimfiles/tags/c++.tags
-"set tags+=~/vimfiles/tags/stl-3.3.tags
-"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-"let OmniCpp_MayCompleteDot = 1 " autocomplete with .
-"let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
-"let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
-"let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
-"let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
-""" pythoncomplete
-"NeoBundle 'pythoncomplete'
-""" End Omni Complete
 
 """ VST :Vim reStructured Text 
 NeoBundle 'VST'
 """ End VST
-
-""" c.vim
-" Bundle 'vim-scripts/c.vim'
-""" End c.vim
-
-""" vim-fugitive (Git Plugin)
-"NeoBundle 'tpope/vim-fugitive'
-"""
-
-""" vim-surround
-"NeoBundle 'tpope/vim-surround'
-""" end vim-surround
-
-""" numbers.vim
-"NeoBundle "myusuf3/numbers.vim"
-"nnoremap <F3> :NumbersToggle<CR>
-""" end numbers.vim
 
 """SrcExpl
 NeoBundle "wesleyche/SrcExpl"
@@ -200,22 +132,10 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
    \ }
 ""end ctrlp.vim
 
-"" easymotion
-"NeoBundle 'Lokaltog/vim-easymotion'
-""end easymotion
-
 """ Start Syntax
-" NeoBundle 'vim-scripts/Python-Syntax'
 NeoBundle "pangloss/vim-javascript"
-" NeoBundle 'php.vim'
-" NeoBundle 'jQuery'
-" NeoBundle 'css_color.vim'
-" NeoBundle 'cpp.vim'
-" NeoBundle 'django.vim'
-" NeoBundle 'plasticboy/vim-markdown'
-" NeoBundle 'rest.vim'
-"set syntax=rest
 "
+
 NeoBundle 'flazz/vim-colorschemes'
 
 """ End Syntax
@@ -235,9 +155,4 @@ NeoBundle 'flazz/vim-colorschemes'
 "NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
 "NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
-"NeoBundle 'Yggdroot/indentLine'
-"show indent guides
-"set list
-"set listchars=tab:\⁞\ 
-"set listchars=tab:\»\ 
 set listchars=eol:$,tab:\»\ ,trail:~,extends:>,precedes:<
