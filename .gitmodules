@@ -1,6 +1,6 @@
 [submodule "bundle/neobundle.vim"]
 	path = bundle/neobundle.vim
-	url = git@github.com:Shougo/neobundle.vim.git
+	url = https://github.com/Shougo/neobundle.vim.git
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
-	url = git@github.com:Valloric/YouCompleteMe.git
+	url = https://github.com/Valloric/YouCompleteMe.git
