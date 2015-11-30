@@ -96,7 +96,7 @@ set number
 set tabstop=8
 
 "Set Tab to Space
-"set expandtab
+set expandtab
 
 "Set Show Command
 set showcmd
