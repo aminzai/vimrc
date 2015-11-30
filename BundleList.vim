@@ -140,12 +140,14 @@ NeoBundle "myusuf3/numbers.vim"
 
 NeoBundle 'flazz/vim-colorschemes'
 
+""" Easy motion
+NeoBundle 'easymotion/vim-easymotion'
+
 """ End Syntax
 "
 " Note: You don't set neobundle setting in .gvimrc!
 " Original repos on github
 "NeoBundle 'tpope/vim-fugitive'
-" NeoBundle 'Lokaltog/vim-easymotion'
 "NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " vim-scripts repos
 "NeoBundle 'L9'
