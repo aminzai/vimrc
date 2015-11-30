@@ -116,12 +116,12 @@ nmap <F10> :TrinityToggleTagList<CR>
 nmap <F11> :TrinityToggleNERDTree<CR>  
 
 ""ctrlp.vim
-NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'rc'
  
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*pyc     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
