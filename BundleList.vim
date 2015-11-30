@@ -134,7 +134,9 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 """ Start Syntax
 NeoBundle "pangloss/vim-javascript"
-"
+
+""" Numbers
+NeoBundle "myusuf3/numbers.vim"
 
 NeoBundle 'flazz/vim-colorschemes'
 
