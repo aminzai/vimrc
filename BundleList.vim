@@ -143,6 +143,9 @@ NeoBundle 'flazz/vim-colorschemes'
 """ Easy motion
 NeoBundle 'easymotion/vim-easymotion'
 
+""" flake8-vim
+NeoBundle 'andviro/flake8-vim'
+
 """ End Syntax
 "
 " Note: You don't set neobundle setting in .gvimrc!
