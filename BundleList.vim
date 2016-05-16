@@ -152,6 +152,9 @@ NeoBundle 'andviro/flake8-vim'
 NeoBundle 'scrooloose/syntastic'
 " let g:syntastic_python_checkers = ['pylint']
 
+""" bitbake
+NeoBundle 'kergoth/vim-bitbake'
+
 """ End Syntax
 "
 " Note: You don't set neobundle setting in .gvimrc!
