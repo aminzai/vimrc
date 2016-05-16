@@ -156,6 +156,11 @@ NeoBundle 'scrooloose/syntastic'
 """ bitbake
 NeoBundle 'kergoth/vim-bitbake'
 
+""" Simpyl Fold 
+NeoBundle 'tmhedberg/SimpylFold'
+let g:SimpylFold_docstring_preview = 0
+let g:SimpylFold_fold_import = 1
+
 """ End Syntax
 "
 " Note: You don't set neobundle setting in .gvimrc!
