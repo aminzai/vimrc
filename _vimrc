@@ -95,7 +95,7 @@ set fileencodings=utf8,big5,gbk
 set number
 
 "Set Tab Width
-set tabstop=8
+set tabstop=4
 
 "Set Tab to Space
 set expandtab
@@ -110,10 +110,10 @@ set showmode
 set nowrap
 
 "Set Soft tab stop
-set softtabstop=8
+set softtabstop=4
 
 "Set Soft tab width
-set shiftwidth=8
+set shiftwidth=4
 
 " Don't Save Backup file
 set nobackup
