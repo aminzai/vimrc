@@ -137,6 +137,8 @@ NeoBundle "pangloss/vim-javascript"
 
 """ Numbers
 NeoBundle "myusuf3/numbers.vim"
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
 
 NeoBundle 'flazz/vim-colorschemes'
 
