@@ -123,6 +123,10 @@ set nobackup
 "set foldmethod=indent
 "set foldcolumn=3
 
+set colorcolumn=79
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%80v.\+/
+
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
 if has("autocmd")
