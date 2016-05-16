@@ -22,6 +22,7 @@ NeoBundle "edkolev/promptline.vim"
 """ NERDTree
 NeoBundle "scrooloose/nerdtree"
 nmap <leader>e :<C-u>NERDTree<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$']
 """ End NERDTree
 
 """ TagList
