@@ -148,6 +148,10 @@ NeoBundle 'easymotion/vim-easymotion'
 """ flake8-vim
 NeoBundle 'andviro/flake8-vim'
 
+""" Syntastic
+NeoBundle 'scrooloose/syntastic'
+" let g:syntastic_python_checkers = ['pylint']
+
 """ End Syntax
 "
 " Note: You don't set neobundle setting in .gvimrc!
