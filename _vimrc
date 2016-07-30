@@ -122,6 +122,7 @@ set nobackup
 "set foldenable
 "set foldmethod=indent
 "set foldcolumn=3
+set foldlevel=20
 
 set colorcolumn=79
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
