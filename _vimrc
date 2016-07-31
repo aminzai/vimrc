@@ -84,6 +84,7 @@ endif
 set t_Co=256
 
 " Syntax color ON
+let python_highlight_all=1
 syntax on
 
 "Set File encodeings
