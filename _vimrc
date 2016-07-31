@@ -230,62 +230,21 @@ else
 endif
 
 
-
-"========================================== 
-" Syntax
-"========================================== 
-
-
 "========================================== 
 " Module Seting
 "========================================== 
-
-
-"""""""""""
-"Vundle (VIM model tool)
-"""""""""""
-
-filetype off                   " required!
-
-"use git:// as bundle default protocal
-"let g:vundle_default_git_proto = 'git'
-
 if has('win32')
-    "set rtp+=%UserProfile%\vimfiles/bundle/vundle/
-    set rtp+=%UserProfile%\vimfiles/bundle/neobundle.vim/
+    source ~\vimfiles\plugin_list.vim
 else
-    set rtp+=~/.vim/bundle/neobundle.vim/
+    source ${HOME}/.vim/plugin_list.vim
 endif
 
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-if has('win32')
-    source ~\vimfiles\BundleList.vim
-else
-    source ${HOME}/.vim/BundleList.vim
-endif 
-
-call neobundle#end()
-
-
-
-filetype plugin indent on     " Required!
-"
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-
-" Installation check.
-"if neobundle#exists_not_installed_bundles()
-"  echomsg 'Not installed bundles : ' .
-"        \ string(neobundle#get_not_installed_bundle_names())
-"  echomsg 'Please execute ":NeoBundleInstall" command.'
-"  "finish
-"endif
-
-NeoBundleCheck
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
