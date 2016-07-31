@@ -8,8 +8,10 @@
 " Style Setting 
 "========================================== 
 "
+"
 " Make external commands work through a pipe instead of a pseudo-tty
 "set noguipty
+set encoding=utf-8
 
 " Don't Compatible with vi
 set nocompatible
