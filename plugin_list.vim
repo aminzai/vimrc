@@ -15,7 +15,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/vimproc'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -54,7 +54,16 @@ if has('win32')
     let g:tagbar_ctags_bin='C:\ctags.exe'
 endif
 
-Plug 'Valloric/YouCompleteMe'
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py --clang-completer
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
