@@ -133,13 +133,25 @@ Plug 'flazz/vim-colorschemes'
 
 Plug 'easymotion/vim-easymotion'
 
-Plug 'nvie/vim-flake8'
-autocmd BufWritePost *.py call Flake8()
-let g:flake8_show_in_gutter=1  " show
-let g:flake8_show_in_file=1  " show
+"Plug 'nvie/vim-flake8'
+"autocmd BufWritePost *.py call Flake8()
+"let g:flake8_show_in_gutter=1  " show
+"let g:flake8_show_in_file=1  " show
 
 Plug 'scrooloose/syntastic'
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['flake8', 'frosted', 'pep8', 'pylint']
+"let g:syntastic_python_checkers = ['prospector']
+let g:syntastic_python_python_use_codec = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
 
 Plug 'kergoth/vim-bitbake'
 
