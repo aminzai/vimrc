@@ -133,11 +133,6 @@ Plug 'flazz/vim-colorschemes'
 
 Plug 'easymotion/vim-easymotion'
 
-"Plug 'nvie/vim-flake8'
-"autocmd BufWritePost *.py call Flake8()
-"let g:flake8_show_in_gutter=1  " show
-"let g:flake8_show_in_file=1  " show
-
 Plug 'scrooloose/syntastic'
 let g:syntastic_python_checkers = ['flake8', 'frosted', 'pep8', 'pylint']
 "let g:syntastic_python_checkers = ['prospector']
