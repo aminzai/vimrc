@@ -43,8 +43,9 @@ Plug 'scrooloose/nerdcommenter'
 " Enable trimming of trailing whitespace when uncommenting
 " let g:NERDTrimTrailingWhitespace = 1
 
-Plug 'taglist.vim'
+Plug 'vim-scripts/taglist.vim'
 "nmap <leader>t :<C-u>Tlist<CR>
+Plug 'godlygeek/tabular'
 
 Plug 'majutsushi/tagbar'
 nmap <leader>t :<C-u>TagbarToggle<CR>
@@ -67,7 +68,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-Plug 'VST' "Vim reStructured Text 
+Plug 'vim-scripts/VST' "Vim reStructured Text 
 
 Plug 'wesleyche/SrcExpl'
 map <leader>s  :<C-u>SrcExplToggle<CR>
@@ -153,6 +154,20 @@ Plug 'kergoth/vim-bitbake'
 Plug 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview = 0
 let g:SimpylFold_fold_import = 1
+
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'Yggdroot/indentLine'
+let g:indentLine_enabled = 1
+
+Plug 'ntpeters/vim-better-whitespace'
+
+Plug 'pearofducks/ansible-vim'
+
+
+" Plug 'plasticboy/vim-markdown'
+" Plug 'iamcco/mathjax-support-for-mkdp'
+" Plug 'iamcco/markdown-preview.vim'
 
 call plug#end()
 
