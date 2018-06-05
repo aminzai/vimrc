@@ -134,20 +134,14 @@ Plug 'flazz/vim-colorschemes'
 
 Plug 'easymotion/vim-easymotion'
 
-Plug 'scrooloose/syntastic'
-let g:syntastic_python_checkers = ['flake8', 'frosted', 'pep8', 'pylint']
-"let g:syntastic_python_checkers = ['prospector']
-let g:syntastic_python_python_use_codec = 1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
+Plug 'w0rp/ale'
+set statusline+=%{ALEGetStatusLine()}
+let g:ale_open_list = 1
+" Write this in your vimrc file
+let g:ale_lint_on_text_changed = 'never'
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
 
 Plug 'kergoth/vim-bitbake'
 
