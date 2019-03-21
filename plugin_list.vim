@@ -158,6 +158,7 @@ Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'pearofducks/ansible-vim'
 
+Plug 'tpope/vim-fugitive'
 
 " Plug 'plasticboy/vim-markdown'
 " Plug 'iamcco/mathjax-support-for-mkdp'
