@@ -241,3 +241,6 @@ if has('win32')
 else
     source ${HOME}/.vim/plugin_list.vim
 endif
+
+set listchars=eol:⏎,tab:¦.,trail:␠,nbsp:⎵
+set list
