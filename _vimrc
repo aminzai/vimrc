@@ -46,10 +46,12 @@ endif
 "color wombat256
 "colorscheme desertEx
 "color desertEx
+colorscheme dante
+" color tabula
 "colorscheme wombat256mod
 "color wombat256mod
-colorscheme Monokai
-color Monokai
+"colorscheme Monokai
+"color Monokai
 
 "" Wild Mode
 "set wildmode=full,list
