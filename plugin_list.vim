@@ -72,23 +72,25 @@ Plug 'tpope/vim-fugitive'
 " Plug 'iamcco/mathjax-support-for-mkdp'
 " Plug 'iamcco/markdown-preview.vim'
 
-set pyxversion=3
+if v:version >= 800
+    set pyxversion=3
 
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
+    if has('nvim')
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+        Plug 'Shougo/deoplete.nvim'
+        Plug 'roxma/nvim-yarp'
+        Plug 'roxma/vim-hug-neovim-rpc'
+    endif
+    let g:deoplete#enable_at_startup = 1
+    if has('win32') || has('win64')
+        Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
+    else
+        Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+    endif
+    Plug 'Shougo/deoplete-clangx'
+    Plug 'deoplete-plugins/deoplete-jedi'
 endif
-let g:deoplete#enable_at_startup = 1
-if has('win32') || has('win64')
-    Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-else
-    Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-endif
-Plug 'Shougo/deoplete-clangx'
-Plug 'deoplete-plugins/deoplete-jedi'
 
 call plug#end()
 
@@ -98,7 +100,9 @@ if vim_plug_just_installed
 endif
 
 
-call deoplete#custom#var('tabnine', {
-    \ 'line_limit': 10000,
-    \ 'max_num_results': 10,
-    \ })
+if v:version >= 800
+    call deoplete#custom#var('tabnine', {
+        \ 'line_limit': 10000,
+        \ 'max_num_results': 10,
+        \ })
+endif
