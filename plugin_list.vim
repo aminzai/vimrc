@@ -55,8 +55,6 @@ Plug 'flazz/vim-colorschemes'
 
 Plug 'easymotion/vim-easymotion'
 
-Plug 'kergoth/vim-bitbake'
-
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'Yggdroot/indentLine'
